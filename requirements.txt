@@ -1,0 +1,10 @@
+# Tested in a Linux sandbox with Python 3.12 and the versions noted on the right.
+# Lower bounds are conservative; any recent release should work.
+numpy>=1.24            # tested 2.5.3
+scipy>=1.10            # tested 1.18.1
+opencv-python>=4.8     # tested opencv-python-headless 4.x
+matplotlib>=3.7        # tested 3.11.2
+PyYAML>=6.0            # tested 6.0.3
+requests>=2.31         # tested 2.34.2
+pandas>=2.0            # tested 3.0.5 (used by the dashboard tables)
+streamlit>=1.30        # tested 1.66.1 (dashboard only; CLI works without it)

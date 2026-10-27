@@ -1,0 +1,60 @@
+# ResponsePrint configuration
+# Edit this file instead of the code. All paths are relative to the project root.
+
+camera:
+  # Base URL of the ESP32-CAM. Find the IP in the PlatformIO serial monitor after boot.
+  base_url: "http://192.168.1.50"
+  capture_path: "/capture"      # must return one JPEG per request
+  status_path: "/status"        # must return JSON
+  timeout_s: 3.0
+
+recording:
+  duration_s: 5.0               # how long a live recording runs
+  max_frames: 400               # safety cap
+  output_dir: "data/hardware"
+
+tracking:
+  # Template box [x, y, w, h] in pixels around the tip marker in the FIRST frame.
+  # null = try to auto-detect a dark circular marker (works for the synthetic data
+  # and for a printed black dot / bullseye on a light background).
+  template_box: null
+  search_margin_y_px: 20        # vertical search margin; horizontal search uses the full width
+  min_confidence: 0.6           # normalized cross-correlation below this = tracking failure
+  mm_per_px: null               # optional calibration scale, e.g. 0.21; null = report pixels
+
+analysis:
+  min_cycles: 3                 # need at least this many oscillation cycles in the record
+  min_samples_per_cycle: 2.5    # below this the frequency estimate is flagged unreliable
+  gap_factor: 1.5               # an interval > gap_factor x median interval counts as a gap
+  # Optional: theoretical/expected frequency in Hz (e.g. from beam theory). If it is above
+  # the Nyquist limit of the recording, the analysis refuses to report it as measured.
+  expected_freq_hz: null
+
+synthetic:
+  seed: 42
+  trials_per_condition: 5
+  fps: 25.0
+  duration_s: 4.0
+  width: 320
+  height: 240
+  image_noise: 2.0              # gray-level noise (std) added to every pixel
+  timing_jitter_ms: 0.0         # simulate irregular frame timing
+  drop_prob: 0.0                # simulate lost frames (0..1)
+  save_frames: true             # write PNG frames of trial 1 of each condition
+  output_dir: "data/synthetic"
+  conditions:
+    A:
+      name: "Condition A (baseline)"
+      freq_hz: 4.0
+      zeta: 0.020
+      amplitude_px: 40.0
+      noise_px: 0.3
+    B:
+      name: "Condition B (altered)"
+      freq_hz: 3.6
+      zeta: 0.030
+      amplitude_px: 40.0
+      noise_px: 0.3
+
+outputs:
+  dir: "outputs"

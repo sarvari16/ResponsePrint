@@ -1,0 +1,98 @@
+{
+  "A": {
+    "frequency_hz": {
+      "n": 5,
+      "mean": 4.000183932177641,
+      "std": 0.0003834231201132931
+    },
+    "damping_zeta": {
+      "n": 5,
+      "mean": 0.019987124329190385,
+      "std": 6.127142248385156e-05
+    },
+    "peak_disp_px": {
+      "n": 5,
+      "mean": 39.52293270490482,
+      "std": 0.20602332421447667
+    },
+    "duration_s": {
+      "n": 5,
+      "mean": 3.96,
+      "std": 0.0
+    },
+    "mean_confidence": {
+      "n": 5,
+      "mean": 0.9889464788436889,
+      "std": 0.0010455905718033467
+    },
+    "frame_loss_pct": {
+      "n": 5,
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "timing_cv": {
+      "n": 5,
+      "mean": 2.421907527049102e-15,
+      "std": 0.0
+    },
+    "n_trials": 5,
+    "n_valid_freq": 5,
+    "sources": [
+      "SYNTHETIC (simulated)"
+    ]
+  },
+  "B": {
+    "frequency_hz": {
+      "n": 5,
+      "mean": 3.59982806103669,
+      "std": 0.0003927566055797154
+    },
+    "damping_zeta": {
+      "n": 5,
+      "mean": 0.03002777695921747,
+      "std": 0.00014331641467163085
+    },
+    "peak_disp_px": {
+      "n": 5,
+      "mean": 39.53891658034117,
+      "std": 0.38562183188246146
+    },
+    "duration_s": {
+      "n": 5,
+      "mean": 3.96,
+      "std": 0.0
+    },
+    "mean_confidence": {
+      "n": 5,
+      "mean": 0.9889185823202133,
+      "std": 0.00040087741948881766
+    },
+    "frame_loss_pct": {
+      "n": 5,
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "timing_cv": {
+      "n": 5,
+      "mean": 2.421907527049102e-15,
+      "std": 0.0
+    },
+    "n_trials": 5,
+    "n_valid_freq": 5,
+    "sources": [
+      "SYNTHETIC (simulated)"
+    ]
+  },
+  "caveat": "A frequency/damping difference indicates different dynamic behaviour (stiffness, mass, clamp/boundary condition, temperature, ...). It does not prove a crack or any specific fault. Decision rules here are screening rules, not validated detection thresholds.",
+  "test": {
+    "name": "Welch t-test on per-trial frequency",
+    "t": 1630.9945520383105,
+    "p": 2.2986424017337346e-23,
+    "cohens_d": -1031.5315271534166,
+    "alpha": 0.01
+  },
+  "delta_f_hz": -0.4003558711409507,
+  "delta_f_pct": -10.008436560140947,
+  "verdict": "DIFFERENCE SUPPORTED BY THIS DATA",
+  "explanation": "Mean frequency changed by -0.400 Hz (-10.0%), p=2.3e-23, |d|=1031.5 over 5 vs 5 trials."
+}

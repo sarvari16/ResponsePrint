@@ -1,0 +1,27 @@
+{
+  "source": "synthetic",
+  "label": "SYNTHETIC - simulated data, not a hardware measurement",
+  "name": "Condition B (altered) - trial 1",
+  "seed": 1042,
+  "params": {
+    "name": "Condition B (altered)",
+    "freq_hz": 3.6,
+    "zeta": 0.03,
+    "amplitude_px": 40.0,
+    "phase_rad": 0.0,
+    "noise_px": 0.3,
+    "fps": 25.0,
+    "duration_s": 4.0,
+    "width": 320,
+    "height": 240,
+    "image_noise": 2.0,
+    "timing_jitter_ms": 0.0,
+    "drop_prob": 0.0
+  },
+  "truth": {
+    "freq_hz": 3.6,
+    "damped_freq_hz": 3.5983796353358826,
+    "zeta": 0.03,
+    "rest_x_px": 160.0
+  }
+}
